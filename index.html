@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Küstenfund · Deine Entscheidung?</title>
+
+  <meta
+    name="description"
+    content="Dark Patterns ausprobieren, faire Gestaltung vergleichen und rechtliche Grenzen verstehen."
+  >
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c3948'/%3E%3Cpath d='M4 20q6-8 12 0t12 0M4 26q6-8 12 0t12 0' fill='none' stroke='%235be0ce' stroke-width='3'/%3E%3C/svg%3E"
+  >
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <small>WAHRNEHMUNG & MEDIENPSYCHOLOGIE · LEHRDEMO</small>
+
+    <h1>Deine Entscheidung... oder doch nicht?</h1>
+
+    <p>
+      Erlebe drei Gestaltungstricks. Vergleiche sie anschließend
+      mit einer fairen Alternative.
+    </p>
+  </header>
+
+  <main class="wrap">
+
+    <!-- Auswahl der drei interaktiven Beispiele. -->
+    <nav aria-label="Beispiel auswählen">
+      <button type="button" data-scene="stock">
+        01 · Knapper Bestand
+      </button>
+
+      <button type="button" data-scene="newsletter">
+        02 · Newsletter
+      </button>
+
+      <button type="button" data-scene="shaming">
+        03 · Nicht sparen?
+      </button>
+    </nav>
+
+    <!-- Auswahl der Ansicht und weitere Bedienung. -->
+    <div class="controls">
+      <div class="modes">
+        <button type="button" id="try">
+          Ausprobieren
+        </button>
+
+        <button type="button" id="compare">
+          Vergleichen
+        </button>
+      </div>
+
+      <div class="modes">
+        <button type="button" id="variant" hidden>
+          Faire Variante zeigen
+        </button>
+
+        <button
+          type="button"
+          id="explain"
+          aria-controls="explanation"
+          aria-expanded="false"
+        >
+          Erklärung anzeigen
+        </button>
+
+        <button type="button" id="reset">
+          Zurücksetzen
+        </button>
+      </div>
+    </div>
+
+    <!-- Hier erzeugt JavaScript den Shop. -->
+    <div id="stage" class="stage single"></div>
+
+    <noscript>
+      Bitte aktiviere JavaScript für die interaktive Shopdemo.
+      Die Zusatzinformationen darunter sind auch ohne
+      JavaScript lesbar.
+    </noscript>
+
+    <!-- Erklärung und Rechtsgrundlagen werden hier eingesetzt. -->
+    <section
+      id="explanation"
+      class="explanation"
+      hidden
+      aria-live="polite"
+    ></section>
+
+    <p class="notes">
+      Fiktiver Shop · Alle Klicks sind Simulationen.
+      Es werden keine Bestellungen ausgelöst und keine
+      E-Mail-Adressen erhoben. „Fair“ bezeichnet eine
+      Gestaltungsalternative, keine abschließende
+      rechtliche Bewertung.
+    </p>
+
+    <!--
+      Alle Zusatzbereiche sind zunächst geschlossen.
+      Details und Summary funktionieren ohne JavaScript.
+    -->
+    <section class="learning" aria-labelledby="more-title">
+      <h2 id="more-title">Mehr als ein Tassenkauf</h2>
+
+      <p>
+        Weitere Beispiele und rechtliche Hintergründe
+        zum Aufklappen.
+      </p>
+
+      <!-- Zusatzbeispiel: Kündigung. -->
+      <details>
+        <summary>
+          Erschwerte Kündigung: leichter Einstieg,
+          schwieriger Ausstieg
+        </summary>
+
+        <div class="detail-content">
+          <p class="example-quote">
+            „Das Abo ist in einer Minute abgeschlossen.
+            Zum Kündigen musst du dich durch mehrere
+            Untermenüs und Rückfragen arbeiten.“
+          </p>
+
+          <h3>Was soll das bewirken?</h3>
+
+          <p>
+            Zusätzlicher Aufwand kann dazu führen, dass
+            eine Person die Kündigung aufschiebt oder
+            abbricht. Das Muster wird häufig als
+            „Roach Motel“ bezeichnet.
+          </p>
+
+          <h3>Rechtliche Einordnung</h3>
+
+          <p>
+            § 312k BGB verlangt für die erfassten online
+            abschließbaren entgeltlichen Dauerschuldverhältnisse
+            einen leicht zugänglichen Kündigungsweg.
+            Die erste Schaltfläche führt unmittelbar zu einer
+            Bestätigungsseite. Dort wird die Kündigung mit
+            einer weiteren eindeutig beschrifteten
+            Schaltfläche abgegeben.
+          </p>
+
+          <p>
+            Die Regel enthält Ausnahmen, etwa für
+            Finanzdienstleistungen. Nicht jede zusätzliche
+            Interaktion ist automatisch verboten.
+            Maßgeblich sind die konkrete Gestaltung und
+            der Anwendungsbereich.
+          </p>
+
+          <p>
+            <strong>Faire Alternative:</strong>
+            Ein sichtbarer Kündigungsweg mit notwendigen
+            Angaben, eindeutiger Bestätigung und
+            elektronischer Kündigungsbestätigung.
+          </p>
+
+          <a
+            href="https://www.gesetze-im-internet.de/bgb/__312k.html"
+            target="_blank"
+            rel="noopener"
+          >
+            Gesetzestext: § 312k BGB
+          </a>
+        </div>
+      </details>
+
+      <!-- Zusatzbeispiel: Abofalle. -->
+      <details>
+        <summary>
+          Abofalle: „kostenlos testen“ und später zahlen
+        </summary>
+
+        <div class="detail-content">
+          <p class="example-quote">
+            „Jetzt kostenlos testen!“ – dass später
+            monatlich 19,90 € anfallen, steht kaum
+            erkennbar darunter.
+          </p>
+
+          <h3>Was soll das bewirken?</h3>
+
+          <p>
+            Der kostenlose Einstieg zieht Aufmerksamkeit an.
+            Die spätere Zahlungspflicht tritt in den Hintergrund.
+          </p>
+
+          <h3>Rechtliche Einordnung</h3>
+
+          <p>
+            Ein Probeabo mit späteren Kosten ist nicht
+            automatisch unzulässig. Entscheidend ist
+            unter anderem, ob Preis, Laufzeit und Übergang
+            in die kostenpflichtige Phase verständlich
+            dargestellt werden.
+          </p>
+
+          <p>
+            Begründet die Bestellung bereits eine
+            Zahlungspflicht, auch erst nach einer Testphase,
+            muss die abschließende Bestellschaltfläche
+            diese eindeutig erkennen lassen
+            (§ 312j Absatz 3 BGB).
+            Bei einem Verstoß gegen diese Pflicht kommt
+            der Vertrag nach Absatz 4 nicht zustande.
+            Vorenthaltene wesentliche Informationen
+            können zudem § 5a UWG verletzen.
+          </p>
+
+          <p>
+            <strong>Faire Alternative:</strong>
+            „7 Tage kostenlos, danach 19,90 € pro Monat“
+            sowie klare Informationen zu Laufzeit und
+            Kündigung, bevor die Bestellung erfolgt.
+          </p>
+
+          <p>
+            <a
+              href="https://www.gesetze-im-internet.de/bgb/__312j.html"
+              target="_blank"
+              rel="noopener"
+            >
+              § 312j BGB
+            </a>
+            ·
+            <a
+              href="https://www.gesetze-im-internet.de/uwg_2004/__5a.html"
+              target="_blank"
+              rel="noopener"
+            >
+              § 5a UWG
+            </a>
+          </p>
+        </div>
+      </details>
+
+      <!-- Zeitliche Einordnung. -->
+      <details>
+        <summary>Seit wann gelten die Regeln?</summary>
+
+        <div class="detail-content">
+          <p>
+            Die Daten nennen Anwendungs- oder Geltungsbeginn.
+            Leitlinien erklären bestehende Regeln und
+            sind selbst keine neuen Gesetze.
+          </p>
+
+          <ol class="timeline">
+            <li>
+              <strong>25. Mai 2018 · DSGVO</strong>
+              <br>
+
+              Seit diesem Tag anwendbar. Sie regelt unter
+              anderem Anforderungen an Einwilligung und
+              transparente Datenverarbeitung.
+              Einwilligung ist nur eine von mehreren
+              möglichen Rechtsgrundlagen.
+
+              <br>
+              <a
+                href="https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+                target="_blank"
+                rel="noopener"
+              >
+                DSGVO: Artikel 4, 6, 7 und 99
+              </a>
+            </li>
+
+            <li>
+              <strong>1. Juli 2022 · Kündigungsbutton</strong>
+              <br>
+
+              Die Pflicht gilt für die von § 312k BGB
+              erfassten Verträge, mit gesetzlichen Ausnahmen.
+
+              <br>
+              <a
+                href="https://www.vis.bayern.de/digitale_welt/sicherheit_internet/dark_patterns_rechte.htm"
+                target="_blank"
+                rel="noopener"
+              >
+                Verbraucherportal Bayern: Geltungsbeginn
+              </a>
+            </li>
+
+            <li>
+              <strong>2023 · Finale EDSA-Leitlinien</strong>
+              <br>
+
+              Die Leitlinien 03/2022 erläutern irreführende
+              Gestaltungsmuster auf Social-Media-Oberflächen
+              im Datenschutzkontext.
+
+              <br>
+              <a
+                href="https://www.edpb.europa.eu/documents/guideline/guidelines-032022-on-deceptive-design-patterns-in-social-media-platform_de"
+                target="_blank"
+                rel="noopener"
+              >
+                EDSA: finale Leitlinien
+              </a>
+            </li>
+
+            <li>
+              <strong>17. Februar 2024 · DSA</strong>
+              <br>
+
+              Der Digital Services Act ist grundsätzlich
+              anwendbar. Bestimmte sehr große Dienste
+              und einzelne Vorschriften waren schon
+              früher erfasst.
+
+              <br>
+              <a
+                href="https://eur-lex.europa.eu/eli/reg/2022/2065/oj"
+                target="_blank"
+                rel="noopener"
+              >
+                DSA: Artikel 92 und 93
+              </a>
+            </li>
+          </ol>
+        </div>
+      </details>
+
+      <!-- Abgrenzung und fortbestehende Probleme. -->
+      <details>
+        <summary>
+          Warum sieht man solche Muster trotzdem?
+        </summary>
+
+        <div class="detail-content">
+          <p>
+            Unterschiedliche Vorschriften erfassen
+            unterschiedliche Situationen. Die falsche
+            Stückzahl betrifft andere Regeln als eine
+            unklare Einwilligung. Manche Verstöße lassen
+            sich außerdem erst mit Informationen nachweisen,
+            die ein Screenshot nicht zeigt, etwa dem
+            tatsächlichen Lagerbestand.
+          </p>
+
+          <p>
+            „Grauzone“ bedeutet deshalb keinen rechtsfreien
+            Raum: Manche Gestaltungen müssen im Zusammenhang
+            mit ihrem Ablauf und ihrer Wirkung auf die
+            Entscheidungsfreiheit geprüft werden.
+          </p>
+
+          <h3>Ist durch den DSA alles verboten?</h3>
+
+          <p>
+            Artikel 25 richtet sich an Anbieter von
+            Online-Plattformen, nicht unterschiedslos
+            an jede Website. Für bestimmte kleine Anbieter
+            bestehen Ausnahmen nach Artikel 19.
+            Praktiken, die bereits von der DSGVO oder
+            der Richtlinie über unlautere Geschäftspraktiken
+            erfasst werden, sind nach Artikel 25 Absatz 2
+            ausgenommen. Ein Shop nur mit eigenen Produkten
+            ist nicht allein deshalb eine solche Plattform.
+          </p>
+
+          <p>
+            <a
+              href="https://eur-lex.europa.eu/eli/reg/2022/2065/oj"
+              target="_blank"
+              rel="noopener"
+            >
+              DSA: Artikel 3, 19 und 25
+            </a>
+          </p>
+        </div>
+      </details>
+
+      <!-- Quellen und transparente Projektbeschreibung. -->
+      <details>
+        <summary>Quellen und Projektinformationen</summary>
+
+        <div class="detail-content">
+          <p>
+            Lehrdemo von Cassandra Ludwig für den Kurs
+            Wahrnehmungs- und Medienpsychologie.
+            Die hypothetischen Beispiele veranschaulichen
+            Gestaltung, messen aber keine Verhaltenswirkung.
+          </p>
+
+          <ul>
+            <li>
+              <a
+                href="https://www.verbraucherzentrale.de/wissen/digitale-welt/onlinedienste/dark-patterns-so-wollen-websites-und-apps-sie-manipulieren-58082"
+                target="_blank"
+                rel="noopener"
+              >
+                Verbraucherzentrale: Beispiele für Dark Patterns
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.vis.bayern.de/digitale_welt/sicherheit_internet/dark_patterns_rechte.htm"
+                target="_blank"
+                rel="noopener"
+              >
+                Verbraucherportal Bayern: rechtliche Einordnung
+              </a>
+            </li>
+
+            <li>
+              Die jeweiligen Gesetzestexte sind direkt
+              an den Erläuterungen verlinkt.
+            </li>
+          </ul>
+
+          <p>
+            <strong>KI-Unterstützung:</strong>
+            Konzept, Textentwürfe und Code entstanden
+            mit Unterstützung von ChatGPT.
+            Das Bild der Pinguin-Tasse ist KI-generiert
+            und zeigt ein fiktives Produkt.
+          </p>
+
+          <p>
+            <strong>Dokumentierter Stand:</strong>
+            07.10.2026. Die Einordnung bezieht sich auf
+            die jeweils beschriebenen Annahmen.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <footer>
+      Küstenfund · Fiktiver Shop, echte Gestaltungsfragen
+      · Cassandra Ludwig
+    </footer>
+  </main>
+</body>
+</html>
